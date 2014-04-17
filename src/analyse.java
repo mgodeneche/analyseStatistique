@@ -1,53 +1,53 @@
+import Stats.ALLEMAND;
+import Stats.ANGLAIS;
+import Stats.ESPAGNOL;
+import Stats.FRANCAIS;
+import javafx.beans.binding.Bindings;
+
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Hashtable;
-import java.util.Map;
+
 
 /**
  * Created by Maxence on 12/03/14.
  */
-class anaylse {
+class Analyse {
+
+    FRANCAIS fr = new FRANCAIS();
+    ANGLAIS an = new ANGLAIS();
+    ALLEMAND al = new ALLEMAND();
+    ESPAGNOL es = new ESPAGNOL();
+
+
     String theString ;
+
     double percentE = 0;
     double percentA = 0;
     double percentS = 0;
     double percentT = 0;
     double percentI = 0;
     double percentN = 0;
-    double percentR = 0;
-    double percentO = 0;
-    double percentU = 0;
 
-    int nbE = 0;
-    int nbA = 0;
-    int nbS = 0;
-    int nbT = 0;
-    int nbI = 0;
-    int nbU = 0;
-    int nbO = 0;
-    int nbR = 0;
-    int nbN = 0;
-
-    HashMap FRENCH = new HashMap();
-
-    Hashtable<Integer, String> source = new Hashtable<Integer,String>();
-    HashMap<Integer, String>  map = new HashMap(source);
+    float nbE = 0;
+    float nbA = 0;
+    float nbS = 0;
+    float nbT = 0;
+    float nbI = 0;
+    float nbN = 0;
 
 
-    map.put(21, "Twenty One");
 
+    public int Analyse(String maa){
+        this.theString = maa.toUpperCase();
 
-    Hashtable<String,Double> ENGLISH = new Hashtable<String, Double>();
-    Hashtable<String,Double> ESPAGNOL = new Hashtable<String, Double>();
-    Hashtable<String,Double> ITALIEN = new Hashtable<String, Double>();
-
-
-    public int analyse(String maa){
-        this.theString = maa;
-        ArrayList<String> listOfString = StringToList(maa);
+        ArrayList<String> listOfString = StringToList(this.theString);
         for(int i=0;i<listOfString.size();i++){
             wichLetter(listOfString.get(i));
         }
+        setPercents();
+        /**
+         * Comparaison des pourcentages par rapports au statistiques enregistrées
+         *
+         */
         return 0;
     }
 
@@ -61,9 +61,9 @@ class anaylse {
             character = ""+s.charAt(i);
             convertedString.add(character);
         }
-
         return convertedString;
     }
+
     public void wichLetter(String letter){
         if(letter.equals("E")){
             this.nbE+=1;
@@ -71,48 +71,68 @@ class anaylse {
             this.nbA+=1;
         }else if(letter.equals("I")){
             this.nbI+=1;
-        }else if(letter.equals("O")){
-            this.nbO+=1;
-        }else if(letter.equals("U")){
-            this.nbU+=1;
-        }else if(letter.equals("R")){
-            this.nbR+=1;
         }else if(letter.equals("S")){
             this.nbS+=1;
         }else if(letter.equals("T")){
             this.nbT+=1;
         }else if(letter.equals("N")){
             this.nbN+=1;
+        }else{
+
         }
     }
 
     public void setPercentE() {
-        this.percentE=(nbE/this.theString.length())*100;
+        this.percentE=(this.nbE/(float)this.theString.length())*100;
     }
     public void setPercentA() {
-        this.percentA=(nbA/this.theString.length())*100;
+        this.percentA=(this.nbA/(float)this.theString.length())*100;
     }
     public void setPercentI() {
-        this.percentI=(nbI/this.theString.length())*100;
-    }
-    public void setPercentO() {
-        this.percentO=(nbO/this.theString.length())*100;
-    }
-    public void setPercentU() {
-        this.percentU=(nbU/this.theString.length())*100;
-    }
-    public void setPercentR() {
-        this.percentR=(nbR/this.theString.length())*100;
+        this.percentI=(this.nbI/(float)this.theString.length())*100;
     }
     public void setPercentS() {
-        this.percentS=(nbS/this.theString.length())*100;
+        this.percentS=(this.nbS/(float)this.theString.length())*100;
     }
     public void setPercentT() {
-        this.percentT=(nbT/this.theString.length())*100;
+        this.percentT=(this.nbT/(float)this.theString.length())*100;
     }
     public void setPercentN() {
-        this.percentN=(nbN/this.theString.length())*100;
+        this.percentN=(this.nbN/(float)this.theString.length())*100;
     }
+
+    public void setPercents(){
+        setPercentA();
+        setPercentE();
+        setPercentI();
+        setPercentN();
+        setPercentS();
+        setPercentT();
+    }
+    public double getPercentE() {
+        return percentE;
+    }
+
+    public double getPercentA() {
+        return percentA;
+    }
+
+    public double getPercentS() {
+        return percentS;
+    }
+
+    public double getPercentT() {
+        return percentT;
+    }
+
+    public double getPercentI() {
+        return percentI;
+    }
+
+    public double getPercentN() {
+        return percentN;
+    }
+
 
 
 
