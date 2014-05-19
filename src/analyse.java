@@ -42,6 +42,7 @@ class Analyse {
         ArrayList<String> listOfString = StringToList(this.theString);
         for(int i=0;i<listOfString.size();i++){
             wichLetter(listOfString.get(i));
+
         }
         setPercents();
         /**

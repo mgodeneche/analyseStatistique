@@ -14,7 +14,12 @@ public class Main {
 
         analyse.Analyse(userAnswer);
 
-        System.out.println(analyse.getPercentE());
+        System.out.println("E : "+analyse.getPercentE());
+        System.out.println("A : "+analyse.getPercentA());
+        System.out.println("I : "+analyse.getPercentI());
+        System.out.println("S : "+analyse.getPercentS());
+        System.out.println("T : "+analyse.getPercentT());
+        System.out.println("N : "+analyse.getPercentN());
 
 
     }

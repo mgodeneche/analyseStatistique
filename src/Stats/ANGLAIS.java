@@ -20,5 +20,9 @@ public class ANGLAIS {
      * Source :
      * http://www.apprendre-en-ligne.net/crypto/stat/anglais.html
      */
+    private boolean isEnglish(String theMessage,double percentE,double percentS,double percentA, double percentI, double percentT , double percentN){
 
+
+        return false;
+    }
 }
