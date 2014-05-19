@@ -82,6 +82,7 @@ class Analyse {
          * Comparaison des pourcentages par rapports au statistiques enregistrées
          *
          */
+        whatIsThisFuckingLangage();
         return 0;
     }
 
@@ -140,8 +141,28 @@ class Analyse {
             this.nbTHE +=1;
         }
     }
+    // Fonction CHUCK NORRIS
+    public void whatIsThisFuckingLangage(){
+        System.out.println("Chuck norris à la rescousse !");
+        if((this.percentDER>this.percentENT)&&(this.percentDER>this.percentTHE)){
+            System.out.println("c'est surement de l'allemand..");
+            if((this.percentEN>this.percentTH)&&(this.percentEN>this.percentES)){
+                System.out.println("là ça se précise...");
+                if((this.percentE>this.percentN)&&(this.percentN>this.percentI)){
+                    // ALLEMAND
+                    System.out.println("PUTAIN C'EST DU BOCHE !!");
+                }
 
+            }
+        }
+        if((this.percentENT>this.percentDER)&&(this.percentENT>this.percentTHE)){
+            // Français ou espagnol ?
+        }
+        if((this.percentTHE>this.percentDER)&&(this.percentTHE>this.percentENT)){
+            // ANGLAIS
+        }
 
+    }
     public void wichLetter(String letter){
         if(letter.equals("E")){
             this.nbE+=1;
@@ -161,31 +182,31 @@ class Analyse {
     }
 
     public void setPercentE() {
-        this.percentE=(this.nbE/(float)this.theString.length())*100;
+        this.percentE=Math.round((this.nbE/(float)this.theString.length())*100);
     }
     public void setPercentA() {
-        this.percentA=(this.nbA/(float)this.theString.length())*100;
+        this.percentA=Math.round((this.nbA/(float)this.theString.length())*100);
     }
     public void setPercentI() {
-        this.percentI=(this.nbI/(float)this.theString.length())*100;
+        this.percentI=Math.round((this.nbI/(float)this.theString.length())*100);
     }
     public void setPercentS() {
-        this.percentS=(this.nbS/(float)this.theString.length())*100;
+        this.percentS=Math.round((this.nbS/(float)this.theString.length())*100);
     }
     public void setPercentT() {
-        this.percentT=(this.nbT/(float)this.theString.length())*100;
+        this.percentT=Math.round((this.nbT/(float)this.theString.length())*100);
     }
     public void setPercentN() {
-        this.percentN=(this.nbN/(float)this.theString.length())*100;
+        this.percentN=Math.round((this.nbN/(float)this.theString.length())*100);
     }
     public void setPercentEN() {
-        this.percentEN=(this.nbEN/(float)this.theString.length()*100);
+        this.percentEN=Math.round((this.nbEN/(float)this.theString.length()*100));
     }
     public void setPercentES() {
-        this.percentES=(this.nbES/(float)this.theString.length()*100);
+        this.percentES=Math.round((this.nbES/(float)this.theString.length()*100));
     }
     public void setPercentTH() {
-        this.percentTH=(this.nbTH/(float)this.theString.length()*100);
+        this.percentTH=Math.round((this.nbTH/(float)this.theString.length()*100));
     }
     public void setPercentTHE() {
         this.percentTHE=(this.nbTHE/(float)this.theString.length()*100);
