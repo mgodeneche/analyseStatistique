@@ -20,7 +20,7 @@ class Analyse {
 
     String theString ;
     /*
-     * Annalyse des monogrammes 
+     * Annalyse des monogrammes
      */
     double percentE = 0;
     double percentA = 0;
@@ -67,7 +67,15 @@ class Analyse {
         ArrayList<String> listOfString = StringToList(this.theString);
         for(int i=0;i<listOfString.size();i++){
             wichLetter(listOfString.get(i));
+            // éviter le out of bound i = -1
+            if(i>0){
+                isItABigram(listOfString.get(i - 1), listOfString.get(i));
 
+                // pour eviter le out of bounds exception
+                if(i<listOfString.size()-1){
+                    isItATrigram(listOfString.get(i-1),listOfString.get(i),listOfString.get(i+1));
+                }
+            }
         }
         setPercents();
         /**
@@ -89,6 +97,50 @@ class Analyse {
         }
         return convertedString;
     }
+    /*
+     * On teste la présence d'un bigramme en analysant la lettre courante et la lettre précédente
+     */
+    public void isItABigram(String previousLetter, String currentLetter){
+        // si la lettre actuelle est N , on teste la lettre précédente
+        if(currentLetter.equals("N")){
+            // si la lettre précédente est un E
+            if(previousLetter.equals("E")){
+                this.nbEN +=1;
+            }
+        }
+        if(currentLetter.equals("S")){
+            // si la lettre précédente est un E
+            if(previousLetter.equals("E")){
+                this.nbES +=1;
+            }
+        }
+        if(currentLetter.equals("H")){
+            if(previousLetter.equals("T")){
+                this.nbES +=1;
+            }
+
+        }
+
+    }
+
+    /*
+     * On teste la présence d'un trigramme en analysant la lettre courante, la lettre précédente et la suivante
+     */
+    public void isItATrigram(String previousLetter, String currentLetter , String nextLetter){
+        if((currentLetter.equals("N"))&&(previousLetter.equals("E"))&&(nextLetter.equals("T"))){
+            // on a un trigramme
+            this.nbENT +=1;
+        }
+        if((currentLetter.equals("E"))&&(previousLetter.equals("D"))&&(nextLetter.equals("R"))){
+            // on a un trigramme
+            this.nbDER +=1;
+        }
+        if((currentLetter.equals("H"))&&(previousLetter.equals("T"))&&(nextLetter.equals("H"))){
+            // on a un trigramme
+            this.nbTHE +=1;
+        }
+    }
+
 
     public void wichLetter(String letter){
         if(letter.equals("E")){
@@ -126,7 +178,24 @@ class Analyse {
     public void setPercentN() {
         this.percentN=(this.nbN/(float)this.theString.length())*100;
     }
-
+    public void setPercentEN() {
+        this.percentEN=(this.nbEN/(float)this.theString.length()*100);
+    }
+    public void setPercentES() {
+        this.percentES=(this.nbES/(float)this.theString.length()*100);
+    }
+    public void setPercentTH() {
+        this.percentTH=(this.nbTH/(float)this.theString.length()*100);
+    }
+    public void setPercentTHE() {
+        this.percentTHE=(this.nbTHE/(float)this.theString.length()*100);
+    }
+    public void setPercentDER() {
+        this.percentDER=(this.nbDER/(float)this.theString.length()*100);
+    }
+    public void setPercentENT() {
+        this.percentENT=(this.nbENT/(float)this.theString.length()*100);
+    }
     public void setPercents(){
         setPercentA();
         setPercentE();
@@ -134,7 +203,38 @@ class Analyse {
         setPercentN();
         setPercentS();
         setPercentT();
+        setPercentEN();
+        setPercentES();
+        setPercentTH();
+        setPercentTHE();
+        setPercentENT();
+        setPercentDER();
     }
+    public double getPercentEN() {
+        return percentEN;
+    }
+
+    public double getPercentES() {
+        return percentES;
+    }
+
+    public double getPercentTH() {
+        return percentTH;
+    }
+
+    public double getPercentDER() {
+        return percentDER;
+    }
+
+    public double getPercentTHE() {
+        return percentTHE;
+    }
+
+    public double getPercentENT() {
+        return percentENT;
+    }
+
+
     public double getPercentE() {
         return percentE;
     }
