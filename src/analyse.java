@@ -19,7 +19,9 @@ class Analyse {
 
 
     String theString ;
-
+    /*
+     * Annalyse des monogrammes 
+     */
     double percentE = 0;
     double percentA = 0;
     double percentS = 0;
@@ -33,6 +35,29 @@ class Analyse {
     float nbT = 0;
     float nbI = 0;
     float nbN = 0;
+
+    /*
+     * Annalyse des bigrammes
+     */
+    float nbEN = 0; // ALLEMAND & ESPAGNOL
+    float nbES = 0; // FRANCAIS
+    float nbTH = 0; // ANGLAIS
+
+    double percentEN = 0;
+    double percentES = 0;
+    double percentTH = 0;
+
+    /*
+     * Annalyse des Trigrammes
+     */
+    float nbDER = 0; // ALLEMAND
+    float nbENT = 0; // FRANCAIS & ESPAGNOL
+    float nbTHE = 0; // ANGLAIS
+
+    double percentDER = 0;
+    double percentENT = 0;
+    double percentTHE = 0;
+
 
 
 
