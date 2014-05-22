@@ -15,7 +15,7 @@ public class ANGLAIS {
     private String premierBi = "TH";
     private String premierTri = "THE";
 
-
+    private String specialsChars[] = {};
     /**
      * Source :
      * http://www.apprendre-en-ligne.net/crypto/stat/anglais.html

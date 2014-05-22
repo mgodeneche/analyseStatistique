@@ -13,6 +13,7 @@ public class Main {
         String userAnswer = sc.nextLine();
 
         analyse.Analyse(userAnswer);
+        /*
         System.out.println("Monogrammes :");
         System.out.println("E : "+analyse.getPercentE());
         System.out.println("A : "+analyse.getPercentA());
@@ -30,7 +31,7 @@ public class Main {
         System.out.println("ENT :"+analyse.getPercentENT());
         System.out.println("DER :"+analyse.getPercentDER());
         System.out.println("THE :"+analyse.getPercentTHE());
-
+        */
 
     }
 }

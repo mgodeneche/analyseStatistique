@@ -15,6 +15,8 @@ public class ESPAGNOL {
     private String premierBi = "EN";
     private String premierTri = "ENT";
 
+    private String specialsChars[] = {"¡","¿","Ñ","Á","Ó","Ú","Í"};
+
 
     /**
      * Source :

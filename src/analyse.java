@@ -63,7 +63,7 @@ class Analyse {
 
     public int Analyse(String maa){
         this.theString = maa.toUpperCase();
-
+        System.out.println(this.theString);
         ArrayList<String> listOfString = StringToList(this.theString);
         for(int i=0;i<listOfString.size();i++){
             wichLetter(listOfString.get(i));
@@ -165,17 +165,17 @@ class Analyse {
 
     }
     public void wichLetter(String letter){
-        if(letter.equals("E")){
+        if(letter.equals("E")||(letter.equals("É"))||(letter.equals("È"))){
             this.nbE+=1;
-        }else if(letter.equals("A")){
+        }else if(letter.equals("A")||(letter.equals("À"))){
             this.nbA+=1;
-        }else if(letter.equals("I")){
+        }else if(letter.equals("I")||(letter.equals("Í"))){
             this.nbI+=1;
         }else if(letter.equals("S")){
             this.nbS+=1;
         }else if(letter.equals("T")){
             this.nbT+=1;
-        }else if(letter.equals("N")){
+        }else if(letter.equals("N")||(letter.equals("Ñ"))){
             this.nbN+=1;
         }else{
 

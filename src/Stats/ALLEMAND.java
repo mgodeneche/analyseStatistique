@@ -15,6 +15,8 @@ public class ALLEMAND{
     private String premierBi = "EN";
     private String premierTri = "DER";
 
+    private String specialsChars[] = {"Ü","Ö"};
+
     /**
      * Source :
      * http://www.apprendre-en-ligne.net/crypto/stat/allemand.html

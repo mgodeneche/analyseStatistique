@@ -15,6 +15,7 @@ public class FRANCAIS{
     private String premierBi = "ES";
     private String premierTri = "ENT";
 
+    private String specialsChars[] = {"Ç","É","À","È"};
 
     /**
     / Sources :
