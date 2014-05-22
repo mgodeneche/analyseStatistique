@@ -156,10 +156,11 @@ class Analyse {
             }
         }
         if((this.percentENT>this.percentDER)&&(this.percentENT>this.percentTHE)){
-            // Français ou espagnol ?
+           System.out.print("Français ou Espagnol ?");
         }
         if((this.percentTHE>this.percentDER)&&(this.percentTHE>this.percentENT)){
-            // ANGLAIS
+           System.out.print("Anglais ?");
+
         }
 
     }
