@@ -3,7 +3,7 @@ package Stats;
 /**
  * Created by Maxence on 12/04/14.
  */
-public class ALLEMAND{
+public class ALLEMAND extends Langue{
 
     private double tauxE = 16.92;
     private double tauxS = 6.62;
@@ -15,7 +15,7 @@ public class ALLEMAND{
     private String premierBi = "EN";
     private String premierTri = "DER";
 
-    private String specialsChars[] = {"Ü","Ö"};
+    private String specialsChars[] = {"ẞ","Ü","Ö","Ä"}; // on garde le ẞ au cas où.
 
     /**
      * Source :

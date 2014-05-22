@@ -3,7 +3,7 @@ package Stats;
 /**
  * Created by Maxence on 12/04/14.
  */
-public class ESPAGNOL {
+public class ESPAGNOL extends Langue{
 
     private double tauxE = 13.69;
     private double tauxS = 6.97;

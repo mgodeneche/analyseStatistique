@@ -3,7 +3,7 @@ package Stats;
 /**
  * Created by Maxence on 12/04/14.
  */
-public class ANGLAIS {
+public class ANGLAIS extends Langue{
 
     private double tauxE = 12.56;
     private double tauxS = 6.59;
@@ -20,6 +20,8 @@ public class ANGLAIS {
      * Source :
      * http://www.apprendre-en-ligne.net/crypto/stat/anglais.html
      */
+
+
     private boolean isEnglish(String theMessage,double percentE,double percentS,double percentA, double percentI, double percentT , double percentN){
 
 

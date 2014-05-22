@@ -5,6 +5,9 @@ import Stats.FRANCAIS;
 import javafx.beans.binding.Bindings;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+
+import static java.util.Arrays.asList;
 
 
 /**
@@ -19,6 +22,10 @@ class Analyse {
 
 
     String theString ;
+    boolean textMayBeEnglish = false;
+    boolean textMayBeFrench = false;
+    boolean textMayBeGerman = false;
+    boolean textMayBeSpanish = false;
     /*
      * Annalyse des monogrammes
      */
@@ -59,7 +66,15 @@ class Analyse {
     double percentTHE = 0;
 
 
+    /*
+     * Comptage par specials chars
+     */
+    float nbFrench =0;
+    float nbGerman =0;
+    float nbSpanish =0;
+    float nbEnglish =0;
 
+    float global[] = {nbEnglish,nbFrench,nbSpanish,nbGerman};
 
     public int Analyse(String maa){
         this.theString = maa.toUpperCase();
@@ -67,6 +82,8 @@ class Analyse {
         ArrayList<String> listOfString = StringToList(this.theString);
         for(int i=0;i<listOfString.size();i++){
             wichLetter(listOfString.get(i));
+            //count(listOfString.get(i));
+            System.out.println(fr.getSpecialsChars().toString());
             // éviter le out of bound i = -1
             if(i>0){
                 isItABigram(listOfString.get(i - 1), listOfString.get(i));
@@ -98,9 +115,40 @@ class Analyse {
         }
         return convertedString;
     }
+
+
+    public void countFrench(String letter){
+        if(Arrays.asList(fr.getSpecialsChars()).contains(letter)){
+            this.nbFrench++;
+        }
+    }
+    public void countEnglish(String letter){
+    /*
+        if(Arrays.asList(an.getSpecialsChars()).contains(letter)){
+            this.nbEnglish++;
+        }*/
+    }
+    public void countSpanish(String letter){
+        if(Arrays.asList(es.getSpecialsChars()).contains(letter)){
+            this.nbSpanish++;
+        }
+    }
+    public void countGerman(String letter){
+        if(Arrays.asList(al.getSpecialsChars()).contains(letter)){
+            this.nbGerman++;
+        }
+    }
+    public void count(String letter){
+        countEnglish(letter);
+        countFrench(letter);
+        countSpanish(letter);
+        countGerman(letter);
+    }
+
     /*
      * On teste la présence d'un bigramme en analysant la lettre courante et la lettre précédente
      */
+
     public void isItABigram(String previousLetter, String currentLetter){
         // si la lettre actuelle est N , on teste la lettre précédente
         if(currentLetter.equals("N")){
