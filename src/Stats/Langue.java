@@ -15,7 +15,7 @@ public abstract class Langue {
     private String premierBi;
     private String premierTri ;
 
-    private String specialsChars[];
+    private String specialsChars[] ={};
 
     public String[] getSpecialsChars() {
         return specialsChars;

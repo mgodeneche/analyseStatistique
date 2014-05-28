@@ -2,12 +2,9 @@ import Stats.ALLEMAND;
 import Stats.ANGLAIS;
 import Stats.ESPAGNOL;
 import Stats.FRANCAIS;
-import javafx.beans.binding.Bindings;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-
-import static java.util.Arrays.asList;
 
 
 /**
@@ -82,8 +79,8 @@ class Analyse {
         ArrayList<String> listOfString = StringToList(this.theString);
         for(int i=0;i<listOfString.size();i++){
             wichLetter(listOfString.get(i));
-            //count(listOfString.get(i));
-            System.out.println(fr.getSpecialsChars().toString());
+            count(listOfString.get(i));
+                //System.out.println(fr.getSpecialsChars());
             // éviter le out of bound i = -1
             if(i>0){
                 isItABigram(listOfString.get(i - 1), listOfString.get(i));
@@ -119,6 +116,7 @@ class Analyse {
 
     public void countFrench(String letter){
         if(Arrays.asList(fr.getSpecialsChars()).contains(letter)){
+            System.out.println("FR !");
             this.nbFrench++;
         }
     }
@@ -138,11 +136,17 @@ class Analyse {
             this.nbGerman++;
         }
     }
-    public void count(String letter){
+    public String count(String letter){
         countEnglish(letter);
         countFrench(letter);
         countSpanish(letter);
         countGerman(letter);
+        String langue ="";
+        if((this.nbFrench>this.nbSpanish)&&(this.nbFrench>this.nbGerman)){
+            langue = "Français";
+            System.out.println("Francais");
+        }
+        return langue;
     }
 
     /*
