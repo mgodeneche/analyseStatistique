@@ -20,4 +20,11 @@ public abstract class Langue {
     public String[] getSpecialsChars() {
         return specialsChars;
     }
+
+    public void returnSpecialChars() {
+        for(int i=0;i<specialsChars.length;i++){
+            System.out.println("ok");
+            System.out.println(specialsChars[i]);
+        }
+    }
 }

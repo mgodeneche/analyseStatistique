@@ -74,13 +74,16 @@ class Analyse {
     float global[] = {nbEnglish,nbFrench,nbSpanish,nbGerman};
 
     public int Analyse(String maa){
+
+        fr.returnSpecialChars();
+        //al.returnSpecialChars();
         this.theString = maa.toUpperCase();
         System.out.println(this.theString);
         ArrayList<String> listOfString = StringToList(this.theString);
         for(int i=0;i<listOfString.size();i++){
             wichLetter(listOfString.get(i));
             count(listOfString.get(i));
-                //System.out.println(fr.getSpecialsChars());
+
             // éviter le out of bound i = -1
             if(i>0){
                 isItABigram(listOfString.get(i - 1), listOfString.get(i));
@@ -96,7 +99,7 @@ class Analyse {
          * Comparaison des pourcentages par rapports au statistiques enregistrées
          *
          */
-        whatIsThisFuckingLangage();
+        //whatIsThisFuckingLangage();
         return 0;
     }
 
@@ -173,7 +176,6 @@ class Analyse {
             }
 
         }
-
     }
 
     /*
